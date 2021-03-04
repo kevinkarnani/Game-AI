@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<sequence>
+    <sequence>
+        <action>MoveRight</action>
+        <sequence>
+            <selector>
+                <condition>Danger</condition>
+                <condition>IsCoinAbove</condition>
+                <condition>IsMysteryBoxAbove</condition>
+            </selector>
+            <action>Jump</action>
+        </sequence>
+    </sequence>
+    <sequence>
+        <condition>IsEnemyAhead</condition>
+        <action>Shoot</action>
+    </sequence>
+</sequence>
