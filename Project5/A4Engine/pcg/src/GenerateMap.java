@@ -8,7 +8,7 @@ public class GenerateMap {
         int newHeight = 2 * height + 1, newWidth = 2 * width + 1;
         int[][] map = new int[newWidth][newHeight];
 
-        // big trees along the edges, small trees on even tiles, land on odd tiles
+        // big trees along the edges, random on even tiles, land on odd tiles
         for (int i = 0; i < newWidth; i++) {
             for (int j = 0; j < newHeight; j++) {
                 if (i == 0 || j == 0 || i == newWidth - 1 || j == newHeight - 1) {
@@ -16,7 +16,17 @@ public class GenerateMap {
                 } else if (i % 2 == 1 && j % 2 == 1) {
                     map[i][j] = Objects.LAND_TILE.getValue();
                 } else {
-                    map[i][j] = Objects.SMALL_TREE_TILE.getValue();
+                    int r1 = new Random().nextInt(100) + 1;
+
+                    if (r1 <= 5) {
+                        map[i][j] = Objects.LAND_TILE.getValue();
+                    } else if (r1 <= 15) {
+                        map[i][j] = Objects.HOUSE.getValue();
+                    } else if (r1 < 25) {
+                        map[i][j] = Objects.ROCK.getValue();
+                    } else {
+                        map[i][j] = Objects.SMALL_TREE_TILE.getValue();
+                    }
                 }
             }
         }
@@ -42,24 +52,6 @@ public class GenerateMap {
                 map[row1][col1 + 1] = Objects.LAND_TILE.getValue();
             } else if (row2 > row1) {
                 map[row1 + 1][col1] = Objects.LAND_TILE.getValue();
-            }
-        }
-
-        // 1...w - 1 and 1... h - 1 ascertains that big trees arent removed
-        for (int i = 1; i < newWidth - 1; i++) {
-            for (int j = 1; j < newHeight - 1; j++) {
-                // randomize the map without blocking any open paths
-                if (map[i][j] != Objects.LAND_TILE.getValue()) {
-                    int r1 = new Random().nextInt(100) + 1;
-
-                    if (r1 <= 5) {
-                        map[i][j] = Objects.LAND_TILE.getValue();
-                    } else if (r1 <= 15) {
-                        map[i][j] = Objects.HOUSE.getValue();
-                    } else if (r1 < 25) {
-                        map[i][j] = Objects.ROCK.getValue();
-                    }
-                }
             }
         }
 
