@@ -23,6 +23,7 @@ public class FileHandler {
 
         while ((line = br.readLine()) != null) {
             if (line.contains(" x=\"")) {
+                // replace starting x and y, \\d+ regex for integers
                 line = line.replaceAll("x=\"\\d+\"", "x=\"" + startX + "\"");
                 line = line.replaceAll("y=\"\\d+\"", "y=\"" + startY + "\"");
             }

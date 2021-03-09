@@ -37,15 +37,13 @@ public class Graph {
         int[] parents = IntStream.range(0, this.numVertices).toArray(); // load 0...numVertices - 1
         PriorityQueue<Edge> mst = new PriorityQueue<>();
 
-        int index = 0;
-        while (!edges.isEmpty() && index < this.numVertices - 1) {
+        while (!edges.isEmpty() && mst.size() < this.numVertices - 1) {
             Edge e = edges.remove();
             int set_1 = this.find(parents, e.getStart());
             int set_2 = this.find(parents, e.getEnd());
 
             if (set_1 != set_2) {
                 mst.add(e);
-                index++;
                 this.union(parents, set_1, set_2);
             }
         }

@@ -27,10 +27,10 @@ resetOpenGLState complete
 done.
 A4EngineApp created.
 graphic file not found... graphics.png
-GLTManager::getImage OK: 0000015A0D04A128 - 0000015A12F7A050
+GLTManager::getImage OK: 000002AE7909CD78 - 000002AE77D9CB20
 GraphicFile created 370 tiles (10 x 37)
 loading A4Map.. games/example-game/P5.tmx
-Spawning player Warrior at 96,32 in map 0
+Spawning player Warrior at 224,288 in map 0
 A4Game created
 First Cycle started for state 0...
 State change: 0 -> 1
@@ -42,7 +42,7 @@ Done.
 graphic file not found... graphics.png
 GraphicFile created 370 tiles (10 x 37)
 loading A4Map.. games/example-game/P5.tmx
-Spawning player Warrior at 96,32 in map 0
+Spawning player Warrior at 224,288 in map 0
 A4Game created
 State change: 1 -> 3
 First Cycle started for state 3...
