@@ -22,8 +22,7 @@ public class BTMarioAgent extends BasicMarioAIAgent implements Agent {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             BehaviorHandler b = new BehaviorHandler();
-            saxParser.parse(new File("C:\\Users\\U6055033\\OneDrive - Clarivate Analytics\\Desktop\\CS\\CS383" +
-                    "\\Project3\\MarioAI\\src\\ch\\idsia\\agents\\controllers\\behavior\\behavior.xml"), b);
+            saxParser.parse(new File("src/ch/idsia/agents/controllers/behavior/behavior.xml"), b);
             this.root = (Sequence) b.tmp;
         } catch (Exception e) {
             e.printStackTrace();
